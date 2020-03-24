@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Fase II: Deletrear nombre en consola diciendo si la letra es vocal, consonante o número</title>
+    </head>
+    <body>
+        <h1>Fase II: Deletrear nombre en consola diciendo si la letra es vocal, consonante o número</h1>
+        Introduce tu nombre: <input type="text" id="nombre" /><br>
+        Introduce tu apellido: <input type="text" id="apellido" /><br>
+        <input type="button" onClick="deletrear()" Value="Deletrear nombre en consola"/>
+        
+        <script>
+
+            function deletrear(){
+                var array=[];
+                var nombre = document.getElementById("nombre").value;
+                var apellido = document.getElementById("apellido").value;
+                var nombreCompleto = nombre + " " + apellido; 
+                var longitud = nombreCompleto.length-1;
+
+                for (i=0;i<=longitud;i++){
+                    array.push(nombreCompleto.charAt(i));
+                    if(nombreCompleto.charAt(i)==="a" ||nombreCompleto.charAt(i)=== "A" ||nombreCompleto.charAt(i)=== "e" ||nombreCompleto.charAt(i)=== "E" ||nombreCompleto.charAt(i)=== "i" ||nombreCompleto.charAt(i)=== "I" ||nombreCompleto.charAt(i)=== "o" ||nombreCompleto.charAt(i)=== "O" ||nombreCompleto.charAt(i)=== "u" ||nombreCompleto.charAt(i)=== "U"){
+                        console.log("He trobat la VOCAL: " + array[i]);
+                    } else if (nombreCompleto.charAt(i)==="1"||nombreCompleto.charAt(i)==="2"||nombreCompleto.charAt(i)==="3"||nombreCompleto.charAt(i)==="4"||nombreCompleto.charAt(i)==="5"||nombreCompleto.charAt(i)==="6"||nombreCompleto.charAt(i)==="7"||nombreCompleto.charAt(i)==="8"||nombreCompleto.charAt(i)==="9"){
+                        console.log("Los nombres no tienen números: " + array[i]);
+
+                    } else {
+                        console.log("He trobat la CONSONANT: " + array[i]);
+
+                    } 
+                }
+
+
+
+
+               
+
+            }
+               
+
+        </script>
+    </body>   
+</html>       
+        

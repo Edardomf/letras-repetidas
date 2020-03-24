@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Fase IV
+        </title>
+    </head>
+    <body>
+        <h1>Fase IV        </h1>
+        Introduce tu nombre: <input type="text" id="nombre" /><br>
+        Introduce tu apellido: <input type="text" id="apellido" /><br>
+        <input type="button" onClick="deletrear()" Value="Deletrear nombre en consola"/>
+        
+        <script>
+
+            function deletrear(){
+                var array=[];
+                var nombre = document.getElementById("nombre").value;
+                var apellido = document.getElementById("apellido").value;
+                var nombreCompleto = nombre + " " + apellido; 
+                var longitud = nombreCompleto.length-1;
+                var countArray = 0;
+                var arrayCount = [];
+                var newArray=[];
+                for (var k=0;k<=longitud;k++){
+                    array.push(nombreCompleto.charAt(k));}
+                    console.log(array);
+                for (var i=0;i<=longitud;i++){
+
+
+                for (var j=0;j<=longitud;j++){
+                    if (array[i]===array[j]) {
+                        countArray++;
+                } 
+                }
+                arrayCount.push(countArray);
+
+
+
+                newArray.push ( i + ' : "' + array[i] + '"');
+
+
+                console.log(newArray[i]);
+                countArray = 0;
+
+
+
+               
+
+            }}
+               
+
+        </script>
+    </body>   
+</html>     
+        
