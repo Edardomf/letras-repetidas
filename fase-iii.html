@@ -2,57 +2,80 @@
 <html>
     <head>
         <meta charset='utf-8'>
-        <title>Fase III: Emmagatzemar en un Map tant les lletres de la llista (o array) com el nombre de vegades que apareixen
-        </title>
+        <title>Fase III</title>
     </head>
     <body>
-        <h1>Fase III: Emmagatzemar en un Map tant les lletres de la llista (o array) com el nombre de vegades que apareixen        </h1>
+        <h1>Fase III</h1>
         Introduce tu nombre: <input type="text" id="nombre" /><br>
         Introduce tu apellido: <input type="text" id="apellido" /><br>
         <input type="button" onClick="deletrear()" Value="Deletrear nombre en consola"/>
         
         <script>
-
+/*
             function deletrear(){
                 var array=[];
                 var nombre = document.getElementById("nombre").value;
                 var apellido = document.getElementById("apellido").value;
-                var nombreCompleto = nombre + apellido; 
+                var nombreCompleto = nombre + " " + apellido; 
                 var longitud = nombreCompleto.length-1;
-                var countArray = 0;
-                var arrayCount = [];
-                var newArray=[];
-                for (var k=0;k<=longitud;k++){
-                    array.push(nombreCompleto.charAt(k));}
-                    console.log(array);
-                for (var i=0;i<=longitud;i++){
+
+                for (i=0;i<=longitud;i++){
+                    array.push(nombreCompleto.charAt(i));
+                    if(nombreCompleto.charAt(i)==="a" ||nombreCompleto.charAt(i)=== "A" ||nombreCompleto.charAt(i)=== "e" ||nombreCompleto.charAt(i)=== "E" ||nombreCompleto.charAt(i)=== "i" ||nombreCompleto.charAt(i)=== "I" ||nombreCompleto.charAt(i)=== "o" ||nombreCompleto.charAt(i)=== "O" ||nombreCompleto.charAt(i)=== "u" ||nombreCompleto.charAt(i)=== "U"){
+                        console.log("He trobat la VOCAL: " + array[i]);
+                    } else if {nombreCompleto.charAt(i)==="1"||nombreCompleto.charAt(i)==="2"||nombreCompleto.charAt(i)==="3"||nombreCompleto.charAt(i)==="4"||nombreCompleto.charAt(i)==="5"||nombreCompleto.charAt(i)==="6"||nombreCompleto.charAt(i)==="7"||nombreCompleto.charAt(i)==="8"||nombreCompleto.charAt(i)==="9"){
+                        console.log("Los nombres no tienen números: " + array[i]);
+
+                    } else if {nombreCompleto.charAt(i)===" "){
+                        console.log("Este es un espacio " + array[i]);
+
+                    } else {
+                        console.log("He trobat la CONSONANT: " + array[i]);
+
+                    }
 
 
-                for (var j=0;j<=longitud;j++){
-                    if (array[i]===array[j]) {
-                        countArray++;
-                } 
+
                 }
-                arrayCount.push(countArray);
-
-
-
-                newArray.push(array[i] + " :" + arrayCount[i]);
-
-
-
-
-                console.log(newArray[i]);
-                countArray = 0;
-
-
 
                
 
-            }}
-               
+            }
+               */
+               function deletrear() {
+                let nombre = document.getElementById("nombre").value;
+                let apellido = document.getElementById("apellido").value;
+                let nombreCompleto1 = nombre + apellido; 
+                let nombreCompleto = nombreCompleto1.toLowerCase(); 
+                let longitud = nombreCompleto.length;
+                var frecuencia = {};
+                let i, letra;
+                for (i=0; i<longitud;i++) {
+                    letra = nombreCompleto.charAt(i);
+                    if (frecuencia[letra]) {
+                        frecuencia[letra]++;
+                    } else {
+                        frecuencia[letra] = 1;
+                    }
+                }
+                console.log(frecuencia);
+                
+
+
+
+
+
+
+}
+
+
 
         </script>
+
+
+
+
+           
     </body>   
 </html>     
         

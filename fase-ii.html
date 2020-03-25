@@ -11,7 +11,7 @@
         <input type="button" onClick="deletrear()" Value="Deletrear nombre en consola"/>
         
         <script>
-
+/*
             function deletrear(){
                 var array=[];
                 var nombre = document.getElementById("nombre").value;
@@ -30,15 +30,43 @@
                         console.log("He trobat la CONSONANT: " + array[i]);
 
                     } 
-                }
-
-
-
-
-               
+                }            
 
             }
-               
+           */
+
+
+
+
+           function deletrear(){
+                var array=[];
+                var nombre = document.getElementById("nombre").value;
+                var apellido = document.getElementById("apellido").value;
+                var nombreCompleto1 = nombre + apellido; 
+                var nombreCompleto = nombreCompleto1.toLowerCase(); 
+
+                var longitud = nombreCompleto.length-1;
+
+                for (i=0;i<=longitud;i++){
+                    array.push(nombreCompleto.charAt(i));
+                     if (isNaN(nombreCompleto.charAt(i))){
+                       
+                        if(nombreCompleto.charAt(i)==="a" ||nombreCompleto.charAt(i)=== "e" ||nombreCompleto.charAt(i)=== "i"||nombreCompleto.charAt(i)=== "o" ||nombreCompleto.charAt(i)=== "u"){
+                        console.log("He trobat la VOCAL: " + array[i]);
+                    } else {
+                        console.log("He trobat la CONSONANT: " + array[i]);
+
+                    } } else {
+                       
+                       
+                        console.log("Los nombres no tienen números: " + array[i]);
+
+                    } 
+                }            
+
+            }
+           
+           
 
         </script>
     </body>   
